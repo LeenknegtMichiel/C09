@@ -1,17 +1,31 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Events } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  constructor(public navCtrl: NavController) {
+  pizza={
+    title:"My Awesome Pizza",
+    toppings:[
+      {
+        id:1,
+        name:"pineapple"
+      },{
+        id:4,
+        name:"Mushrooms"
+      }
+    ]
+  }
+  constructor(
+    public navCtrl: NavController,
+    private events:Events) {
 
   }
   about(){
-    this.navCtrl.parent.select(1); //Tab 2, zo navigeer je correct in tabs
+    this.events.publish("tabsNavigateToAbout", this.pizza)
+    //this.navCtrl.parent.select(1); //Tab 2, zo navigeer je correct in tabs
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
