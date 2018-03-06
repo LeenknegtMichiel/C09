@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { RegisterPage } from '../register/register';
+import { TabsPage } from '../tabs/tabs';
 
 /**
  * Generated class for the LoginPage page.
@@ -32,7 +33,13 @@ export class LoginPage {
   }
 
   login(){
-    this.authService.login(this.user.email,this.user.password);
+    this.authService.login(this.user.email,this.user.password)
+    .then(()=>{
+      if(this,this.authService.isLoggedIn)
+      {
+        this.navCtrl.setRoot(TabsPage);
+      }
+    });
   }
   register(){
     this.navCtrl.push(RegisterPage);
