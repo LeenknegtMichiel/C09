@@ -32,6 +32,10 @@ export class RestaurantPage {
     },(error)=>{
       console.log("didn't get any data", error);
     })
+    let store={
+      name:"New pizza store"
+    }
+    this.db.update("0",store);
   }
 
 }

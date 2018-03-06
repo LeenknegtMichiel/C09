@@ -11,4 +11,7 @@ export class FireDataServiceProvider {
   getAll(){
     return this.db.list("store").valueChanges();
   }
+  // update(id:string, store:any){
+  //   this.db.object("store/" + id).update(store);
+  // }
 }
