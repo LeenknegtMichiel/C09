@@ -17,4 +17,5 @@
 <ion-list>
   <ion-item *ngFor="let store of stores | async">{{store.name}}</ion-item>
 </ion-list>
+<button ion-button full (click)="takePicture()">Take Picture</button>
 </ion-content>
