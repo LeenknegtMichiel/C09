@@ -10,5 +10,8 @@ export class ContactPage {
   constructor(public navCtrl: NavController) {
 
   }
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad ContactPage');
+  }
 
 }
