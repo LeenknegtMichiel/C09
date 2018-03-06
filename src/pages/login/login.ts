@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { RegisterPage } from '../register/register';
 import { TabsPage } from '../tabs/tabs';
+import { RestaurantPage } from '../restaurant/restaurant';
 
 /**
  * Generated class for the LoginPage page.
@@ -18,8 +19,8 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class LoginPage {
   user= {
-    email:"",
-    password:""
+    email:"test@howest.be",
+    password:"wachtwoord1"
   }
 
   constructor(
@@ -37,7 +38,8 @@ export class LoginPage {
     .then(()=>{
       if(this,this.authService.isLoggedIn)
       {
-        this.navCtrl.setRoot(TabsPage);
+        //this.navCtrl.setRoot(TabsPage);
+        this.navCtrl.setRoot(RestaurantPage);
       }
     });
   }

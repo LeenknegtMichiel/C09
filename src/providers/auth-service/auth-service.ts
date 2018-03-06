@@ -7,7 +7,9 @@ import * as firebase from 'firebase/app';
 export class AuthServiceProvider {
   isRegistersucces:boolean=false;
   isLoggedIn:boolean=false;
-  constructor(public afAuth: AngularFireAuth, public toastCtrl:ToastController) {
+  constructor(
+    public afAuth: AngularFireAuth, 
+    public toastCtrl:ToastController) {
     console.log('Hello AuthServiceProvider Provider');
   }
   loginWithGoogle(){
